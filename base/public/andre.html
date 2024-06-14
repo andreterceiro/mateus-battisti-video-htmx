@@ -13,13 +13,21 @@
         <button>Enviar</button>
     </form>
     <div id="label"></div>
+
     <hr />
+
     <h2>hx-vals</h2>
     <form hx-post="/valores-adicionais" hx-trigger="submit" hx-target="#vals" hx-swap="outerHTML" hx-vals='{"valorExtra": "bola azul"}'>
         <input type="text" name="label" />
         <button>Enviar</button>
     </form>
     <div id="vals"></div>
+
+    <hr />
+    <h2>Automatically getting new value</h2>
+    <div hx-get="/tempo-servidor" hx-trigger="every 5s" hx-target="#tempo-servidor"></div>
+    <div id="tempo-servidor">O tempo do servidor ficará aqui</div>
+
 
 </body>
 </html>
