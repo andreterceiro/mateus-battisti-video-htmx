@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js"></script>
+    <script src="scripts-andre.js" defer></script>
 </head>
 <body>
     <h2>Basic</h2>
@@ -27,6 +28,15 @@
     <h2>Automatically getting new value</h2>
     <div hx-get="/tempo-servidor" hx-trigger="every 5s" hx-target="#tempo-servidor"></div>
     <div id="tempo-servidor">O tempo do servidor ficará aqui</div>
+
+    <hr />
+    <h2>Dealing with errors</h2>
+    <form hx-post="/enviar-formulario-validacao" hx-trigger="submit" hx-target="#resultado">
+        <input type="text" name="username" id="username" required/>
+        <div id="username-error" style="color:red"></div>
+        <button>Enviar</button>
+    </form>
+    <div id="resultado"></div>
 
 
 </body>
