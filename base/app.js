@@ -5,6 +5,10 @@ const PORT = 3000;
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
+app.post("/andre", (req, res) => {
+  res.send("O label é: " + req.body.label)
+})
+
 app.get("/carregar-conteudo", (req, res) => {
   res.send("<p>Este é o conteúdo carregado via hx-get</p>");
 });
